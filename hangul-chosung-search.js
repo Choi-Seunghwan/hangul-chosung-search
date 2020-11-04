@@ -1,13 +1,13 @@
-const hangul = require('hangul-js');
+const Hangul = require("hangul-js");
 
-const disassembleSearch = (target, text) => {
+export default search = (target, text) => {
   target = target.toUpperCase();
   text = text.toUpperCase();
 
   // separate if character at index is jong-sung
   for (let i = 0; i < text.length; i++) {
     if (Hangul.isJong(text[i])) {
-      text = text.slice(0, i) + Hangul.d(text[i]).join('') + text.slice(i + 1);
+      text = text.slice(0, i) + Hangul.d(text[i]).join("") + text.slice(i + 1);
     }
   }
   // disassembled array
@@ -15,8 +15,8 @@ const disassembleSearch = (target, text) => {
   const dText = Hangul.d(text, true);
 
   // cho-sung string for comparison
-  const choTarget = dTarget.map(el => el[0]).join('');
-  const choText = dText.map(el => el[0]).join('');
+  const choTarget = dTarget.map((el) => el[0]).join("");
+  const choText = dText.map((el) => el[0]).join("");
   let correctIdx = choTarget.indexOf(choText);
   let check = false;
 
@@ -61,32 +61,27 @@ const disassembleSearch = (target, text) => {
   }
 
   return check;
-}
+};
 
+// computed: {
+//   ...mapState('currencies', ['currencyData', 'symbolSortedMajorCurrencyIdList']),
+//   ...mapState('dwContext', ['lang']),
+//   majorCurrencyIdSearchFilteredList() {
+//     if (!this.currencyData || !this.symbolSortedMajorCurrencyIdList) return [];
+//     const majorCurrencyIdSearchFilteredList = [];
 
+//     this.symbolSortedMajorCurrencyIdList.forEach(currencyId => {
+//       const currency = this.currencyData[currencyId];
 
+//       const inputValue = this.$util.trimSpace(this.criteriaCurrencySearchText);
+//       if (
+//         !inputValue ||
+//         this.$util.disassembleSearch(currency.symbol, inputValue) ||
+//         this.$util.disassembleSearch(currency.name[this.lang], inputValue)
+//       ) {
+//         majorCurrencyIdSearchFilteredList.push(currencyId);
+//       }
+//     });
 
-
-computed: {
-  ...mapState('currencies', ['currencyData', 'symbolSortedMajorCurrencyIdList']),
-  ...mapState('dwContext', ['lang']),
-  majorCurrencyIdSearchFilteredList() {
-    if (!this.currencyData || !this.symbolSortedMajorCurrencyIdList) return [];
-    const majorCurrencyIdSearchFilteredList = [];
-
-    this.symbolSortedMajorCurrencyIdList.forEach(currencyId => {
-      const currency = this.currencyData[currencyId];
-
-      const inputValue = this.$util.trimSpace(this.criteriaCurrencySearchText);
-      if (
-        !inputValue ||
-        this.$util.disassembleSearch(currency.symbol, inputValue) ||
-        this.$util.disassembleSearch(currency.name[this.lang], inputValue)
-      ) {
-        majorCurrencyIdSearchFilteredList.push(currencyId);
-      }
-    });
-
-    return majorCurrencyIdSearchFilteredList;
-  },
-
+//     return majorCurrencyIdSearchFilteredList;
+//   },
