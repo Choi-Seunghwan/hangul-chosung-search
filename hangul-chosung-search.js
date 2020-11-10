@@ -1,6 +1,6 @@
 const Hangul = require("hangul-js");
 
-export default search = (target, text) => {
+const search = (target, text) => {
   target = target.toUpperCase();
   text = text.toUpperCase();
 
@@ -21,7 +21,6 @@ export default search = (target, text) => {
   let check = false;
 
   while (correctIdx >= 0) {
-    // set check boolean to true
     check = true;
 
     for (let charIdx = 0; charIdx < dText.length; charIdx++) {
@@ -63,25 +62,4 @@ export default search = (target, text) => {
   return check;
 };
 
-// computed: {
-//   ...mapState('currencies', ['currencyData', 'symbolSortedMajorCurrencyIdList']),
-//   ...mapState('dwContext', ['lang']),
-//   majorCurrencyIdSearchFilteredList() {
-//     if (!this.currencyData || !this.symbolSortedMajorCurrencyIdList) return [];
-//     const majorCurrencyIdSearchFilteredList = [];
-
-//     this.symbolSortedMajorCurrencyIdList.forEach(currencyId => {
-//       const currency = this.currencyData[currencyId];
-
-//       const inputValue = this.$util.trimSpace(this.criteriaCurrencySearchText);
-//       if (
-//         !inputValue ||
-//         this.$util.disassembleSearch(currency.symbol, inputValue) ||
-//         this.$util.disassembleSearch(currency.name[this.lang], inputValue)
-//       ) {
-//         majorCurrencyIdSearchFilteredList.push(currencyId);
-//       }
-//     });
-
-//     return majorCurrencyIdSearchFilteredList;
-//   },
+module.exports = search;
