@@ -40,14 +40,23 @@ search('안녕', 'ㅇ') // true
 
 search('안녕', 'ㄹ') // false
 
+search('안녕', 'ㅇㄴ') // true
+
 search('Bitcoin', 'bit') // true
 ```
 
 다음과 같이 종성은 검색 대상에서 제외됩니다.
 
 ```
-search('말', 'ㄹ') //false
+search('말', 'ㄹ') // false
 ```
+
+꽤나 재미있는 패턴도 고려해 보았습니다.
+
+```
+search('재미있는', 'ㅈㅁ있ㄴ') // true
+```
+
 
 ## 그 외
 
