@@ -1,10 +1,10 @@
 {
   "name": "hangul-chosung-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/Choi-Seunghwan/hangul-chosung-search.js",
   "homepage": "https://hangul-chosung-search.netlify.app/",
   "description": "hangul chosung searcher",
-  "main": "hangul-chosung-search.js",
+  "main": "hangul-chosung-search",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
