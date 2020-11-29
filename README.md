@@ -4,7 +4,7 @@
 
 ### [Demo Page](https://hangul-chosung-search.netlify.app/)
 
-## Description.
+## 설명
 
 한글 초성 검색 모듈입니다. 대상 문자열에 입력 문자열이 포함되는지를 검사하는 기능입니다. (영문자도 지원합니다.)
 
