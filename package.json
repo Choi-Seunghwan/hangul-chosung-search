@@ -2,6 +2,7 @@
   "name": "hangul-chosung-search",
   "version": "0.9.0",
   "repository": "https://github.com/Choi-Seunghwan/hangul-chosung-search.js",
+  "homepage": "https://hangul-chosung-search.netlify.app/",
   "description": "hangul chosung searcher",
   "main": "hangul-chosung-search.js",
   "scripts": {
