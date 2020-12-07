@@ -21,7 +21,7 @@
 ### node.js
 
 ```
-npm install hangul-chosung.search
+npm install hangul-chosung-search
 ```
 
 ## 사용법
