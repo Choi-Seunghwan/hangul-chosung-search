@@ -2,7 +2,7 @@
 
 ### [NPM Module](https://www.npmjs.com/package/hangul-chosung-search)
 
-### [Demo Page](https://hangul-chosung-search.netlify.app/)
+### [Demo Page](https://hwanee-hangul-chosung-search.netlify.app/)
 
 ## 설명
 
